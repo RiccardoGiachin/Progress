@@ -1,0 +1,3 @@
+/home/giack/CLionProjects/ProgressBar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/giack/CLionProjects/ProgressBar/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/giack/CLionProjects/ProgressBar/cmake-build-debug/CMakeFiles/ProgressBar.dir
