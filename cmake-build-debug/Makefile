@@ -123,6 +123,60 @@ ProgressBar/fast:
 	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/build
 .PHONY : ProgressBar/fast
 
+FileManager.o: FileManager.cpp.o
+
+.PHONY : FileManager.o
+
+# target to build an object file
+FileManager.cpp.o:
+	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/FileManager.cpp.o
+.PHONY : FileManager.cpp.o
+
+FileManager.i: FileManager.cpp.i
+
+.PHONY : FileManager.i
+
+# target to preprocess a source file
+FileManager.cpp.i:
+	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/FileManager.cpp.i
+.PHONY : FileManager.cpp.i
+
+FileManager.s: FileManager.cpp.s
+
+.PHONY : FileManager.s
+
+# target to generate assembly for a file
+FileManager.cpp.s:
+	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/FileManager.cpp.s
+.PHONY : FileManager.cpp.s
+
+ResourceFile.o: ResourceFile.cpp.o
+
+.PHONY : ResourceFile.o
+
+# target to build an object file
+ResourceFile.cpp.o:
+	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/ResourceFile.cpp.o
+.PHONY : ResourceFile.cpp.o
+
+ResourceFile.i: ResourceFile.cpp.i
+
+.PHONY : ResourceFile.i
+
+# target to preprocess a source file
+ResourceFile.cpp.i:
+	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/ResourceFile.cpp.i
+.PHONY : ResourceFile.cpp.i
+
+ResourceFile.s: ResourceFile.cpp.s
+
+.PHONY : ResourceFile.s
+
+# target to generate assembly for a file
+ResourceFile.cpp.s:
+	$(MAKE) -f CMakeFiles/ProgressBar.dir/build.make CMakeFiles/ProgressBar.dir/ResourceFile.cpp.s
+.PHONY : ResourceFile.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ProgressBar"
+	@echo "... FileManager.o"
+	@echo "... FileManager.i"
+	@echo "... FileManager.s"
+	@echo "... ResourceFile.o"
+	@echo "... ResourceFile.i"
+	@echo "... ResourceFile.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

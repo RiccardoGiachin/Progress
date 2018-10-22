@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/giack/CLionProjects/ProgressBar/FileManager.cpp" "/home/giack/CLionProjects/ProgressBar/cmake-build-debug/CMakeFiles/ProgressBar.dir/FileManager.cpp.o"
+  "/home/giack/CLionProjects/ProgressBar/ResourceFile.cpp" "/home/giack/CLionProjects/ProgressBar/cmake-build-debug/CMakeFiles/ProgressBar.dir/ResourceFile.cpp.o"
   "/home/giack/CLionProjects/ProgressBar/main.cpp" "/home/giack/CLionProjects/ProgressBar/cmake-build-debug/CMakeFiles/ProgressBar.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

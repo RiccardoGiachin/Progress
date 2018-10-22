@@ -87,7 +87,22 @@
 		<Unit filename="/home/giack/CLionProjects/ProgressBar/Display.h">
 			<Option target="ProgressBar"/>
 		</Unit>
+		<Unit filename="/home/giack/CLionProjects/ProgressBar/Exception.h">
+			<Option target="ProgressBar"/>
+		</Unit>
+		<Unit filename="/home/giack/CLionProjects/ProgressBar/FileManager.cpp">
+			<Option target="ProgressBar"/>
+		</Unit>
+		<Unit filename="/home/giack/CLionProjects/ProgressBar/FileManager.h">
+			<Option target="ProgressBar"/>
+		</Unit>
 		<Unit filename="/home/giack/CLionProjects/ProgressBar/Observer.h">
+			<Option target="ProgressBar"/>
+		</Unit>
+		<Unit filename="/home/giack/CLionProjects/ProgressBar/ResourceFile.cpp">
+			<Option target="ProgressBar"/>
+		</Unit>
+		<Unit filename="/home/giack/CLionProjects/ProgressBar/ResourceFile.h">
 			<Option target="ProgressBar"/>
 		</Unit>
 		<Unit filename="/home/giack/CLionProjects/ProgressBar/Subject.h">
