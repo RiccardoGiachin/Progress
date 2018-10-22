@@ -17,14 +17,14 @@
 class BarGUI : public Observer {
 public:
 
-    GUIBar(FileManager *f);
+    BarGUI(FileManager *f);
 
     virtual ~BarGUI();
 
     virtual void draw();
 
     virtual void update(int bUp, int fUp, std::string fileName)
-    throw(NegativeOrNullBytesException, NegativeOrNullFilesException) override;
+    throw(NegativeOrNullBytesException, NegativeOrNullFilesException) ;
 
     virtual void attach() override;
 
