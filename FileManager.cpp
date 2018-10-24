@@ -23,11 +23,12 @@ void FileManager::loadFiles() {
         totBytes += (*itr)->getBytes();
     }
     for (auto itr = std::begin(files); itr != std::end(files); itr++) {
+        bytesLoaded += (*itr)->getBytes();
         fileLoaded++;
         std::string name = (*itr)->getFileName();
         int bytesPercentage = (bytesLoaded * 100) / totBytes;
         int filesPercentage = (fileLoaded * 100) / count;
-        notify();
+        notify(bytesPercentage, filesPercentage, name);
     }
 }
 
@@ -40,10 +41,10 @@ void FileManager::unsubscribe(Observer *o) {
     observers.remove(o);
 }
 
-void FileManager::notify(std::string fileName) {
+void FileManager::notify(int bytesPercentage, int filesPercentage, std::string fileName) {
     for (auto itr = std::begin(observers); itr != std::end(observers); itr++) {
         try {
-            (*itr)->update(fileName);
+            (*itr)->update(bytesPercentage, filesPercentage, fileName);
         } catch (NegativeOrNullBytesException &m) {
             std::cout << m.what();
         }

@@ -9,7 +9,7 @@
 
 
 ProgressBarDisplay::ProgressBarDisplay(FileManager *s) : BarGUI::BarGUI(s) {
-    //inizializzo la finestra per il caricamento...
+    //initializing the loading window...
     initscr();
     curs_set(0);
     noecho();

@@ -5,11 +5,12 @@
 #ifndef PROGRESSBAR_OBSERVER_H
 #define PROGRESSBAR_OBSERVER_H
 
+#include <string>
 class Observer {
 public:
     virtual ~Observer() {}
 
-    virtual void update()=0;
+    virtual void update(int bUp, int fUp, std::string fileName)=0;
 
     virtual void attach()=0;
 
