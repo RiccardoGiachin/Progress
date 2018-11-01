@@ -2,9 +2,8 @@
 // Created by giack on 22/10/18.
 //
 
-#ifndef PROGRESSBAR_BARGUI_H
-#define PROGRESSBAR_BARGUI_H
-
+#ifndef PRIMO_GUIBAR_H
+#define PRIMO_GUIBAR_H
 
 #include <string.h>
 #include <ncurses.h>
@@ -24,7 +23,7 @@ public:
     virtual void draw();
 
     virtual void update(int bUp, int fUp, std::string fileName)
-    throw(NegativeOrNullBytesException, NegativeOrNullFilesException) ;
+    throw(NegativeOrNullBytesException, NegativeOrNullFilesException) override;
 
     virtual void attach() override;
 
@@ -48,4 +47,5 @@ private:
     FileManager *subject;
 };
 
-#endif //PROGRESSBAR_BARGUI_H
+
+#endif //PRIMO_GUIBAR_H

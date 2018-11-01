@@ -2,12 +2,14 @@
 // Created by giack on 20/10/18.
 //
 
-#ifndef PROGRESSBAR_DISPLAY_H
-#define PROGRESSBAR_DISPLAY_H
+#ifndef PRIMO_DISPLAY_H
+#define PRIMO_DISPLAY_H
+
 class Display {
 public:
     virtual ~Display() {}
 
     virtual void draw()=0;
 };
-#endif //PROGRESSBAR_DISPLAY_H
+
+#endif //PRIMO_DISPLAY_H

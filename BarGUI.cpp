@@ -2,8 +2,6 @@
 // Created by giack on 22/10/18.
 //
 
-#include "BarGUI.h"
-
 #include <iostream>
 #include "BarGUI.h"
 #include "Exception.h"
@@ -69,6 +67,8 @@ void BarGUI::setCurrentName(const std::string &currentName) {
 const std::string &BarGUI::getCurrentName() const {
     return currentName;
 }
+
+
 
 
 

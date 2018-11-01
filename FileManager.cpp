@@ -2,7 +2,6 @@
 // Created by giack on 22/10/18.
 //
 
-#include "FileManager.h"
 #include <iostream>
 #include "FileManager.h"
 #include "Exception.h"

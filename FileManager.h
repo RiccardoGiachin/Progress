@@ -2,8 +2,8 @@
 // Created by giack on 22/10/18.
 //
 
-#ifndef PROGRESSBAR_FILEMANAGER_H
-#define PROGRESSBAR_FILEMANAGER_H
+#ifndef PRIMO_FILEMANAGER_H
+#define PRIMO_FILEMANAGER_H
 
 
 #include "Subject.h"
@@ -15,36 +15,35 @@
 
 class FileManager : public Subject {
 public:
-FileManager();
+    FileManager();
 
-virtual ~FileManager();
+    virtual ~FileManager();
 
-void loadFiles();
+    void loadFiles();
 
-virtual void subscribe(Observer *o) override;
+    virtual void subscribe(Observer *o) override;
 
-virtual void unsubscribe(Observer *o) override;
+    virtual void unsubscribe(Observer *o) override;
 
-virtual void notify(int bytesPercentage, int filesPercentage, std::string fileName) override;
+    virtual void notify(int bytesPercentage, int filesPercentage, std::string fileName) override;
 
-int getFileLoaded() const;
+    int getFileLoaded() const;
 
-void storeFiles(ResourceFile *f) throw(NegativeOrNullBytesException);
+    void storeFiles(ResourceFile *f) throw(NegativeOrNullBytesException);
 
-const std::list<Observer *> &getObservers() const;
+    const std::list<Observer *> &getObservers() const;
 
-int getBytesLoaded() const;
+    int getBytesLoaded() const;
 
-const std::list<ResourceFile *> &getFiles() const;
+    const std::list<ResourceFile *> &getFiles() const;
 
 private:
 
-std::list<Observer *> observers;
-int fileLoaded;
-int bytesLoaded;
-std::list<ResourceFile *> files;
+    std::list<Observer *> observers;
+    int fileLoaded;
+    int bytesLoaded;
+    std::list<ResourceFile *> files;
 };
 
 
-
-#endif //PROGRESSBAR_FILEMANAGER_H
+#endif //PRIMO_FILEMANAGER_H

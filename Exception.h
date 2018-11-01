@@ -2,8 +2,9 @@
 // Created by giack on 20/10/18.
 //
 
-#ifndef PROGRESSBAR_EXCEPTION_H
-#define PROGRESSBAR_EXCEPTION_H
+#ifndef PROGRESSBAR_LISTEXCEPTION_H
+#define PROGRESSBAR_LISTEXCEPTION_H
+
 #include <stdexcept>
 
 class NegativeOrNullBytesException : public std::out_of_range {
@@ -19,4 +20,5 @@ public:
 
     }
 };
-#endif //PROGRESSBAR_EXCEPTION_H
+
+#endif //PROGRESSBAR_LISTEXCEPTION_H

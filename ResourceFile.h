@@ -5,7 +5,6 @@
 #ifndef PROGRESSBAR_RESOURCEFILE_H
 #define PROGRESSBAR_RESOURCEFILE_H
 
-
 #include <string>
 
 class ResourceFile {
@@ -21,5 +20,6 @@ private:
     std::string FileName;
     int bytes;
 };
+
 
 #endif //PROGRESSBAR_RESOURCEFILE_H

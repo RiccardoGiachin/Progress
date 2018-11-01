@@ -2,8 +2,8 @@
 // Created by giack on 20/10/18.
 //
 
-#ifndef PROGRESSBAR_OBSERVER_H
-#define PROGRESSBAR_OBSERVER_H
+#ifndef PRIMO_OBSERVER_H
+#define PRIMO_OBSERVER_H
 
 #include <string>
 class Observer {
@@ -18,4 +18,4 @@ public:
 
 };
 
-#endif //PROGRESSBAR_OBSERVER_H
+#endif //PRIMO_OBSERVER_H

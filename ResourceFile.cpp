@@ -2,7 +2,6 @@
 // Created by giack on 20/10/18.
 //
 
-
 #include <iostream>
 #include "ResourceFile.h"
 
@@ -18,3 +17,5 @@ const std::string &ResourceFile::getFileName() const {
 int ResourceFile::getBytes() const {
     return bytes;
 }
+
+

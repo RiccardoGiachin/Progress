@@ -1,15 +1,13 @@
 //
 // Created by giack on 22/10/18.
 //
-
-#include "ProgressBarDisplay.h"
 #include <ncurses.h>
 #include <string>
 #include "ProgressBarDisplay.h"
 
 
-ProgressBarDisplay::ProgressBarDisplay(FileManager *s) : BarGUI::BarGUI(s) {
-    //initializing the loading window...
+GUIProgressBar::GUIProgressBar(FileManager *s) : BarGUI::BarGUI(s) {
+    //loading
     initscr();
     curs_set(0);
     noecho();
@@ -21,16 +19,16 @@ ProgressBarDisplay::ProgressBarDisplay(FileManager *s) : BarGUI::BarGUI(s) {
 
 };
 
-ProgressBarDisplay::~ProgressBarDisplay() {
+GUIProgressBar::~GUIProgressBar() {
     detach();
 }
 
-void ProgressBarDisplay::draw() {
+void GUIProgressBar::draw() {
 
     box(progressbar, ACS_VLINE, ACS_DIAMOND);
-    mvwprintw(progressbar, 1, 3, "Waiting....");
+    mvwprintw(progressbar, 1, 3, "LOADING....");
 
-    //simulating a waiting queue from the desktop.
+    //simulo un ritardo nell'agg.percentuale dovuto al caricamento..
 
     wtimeout(progressbar, 500);
     wattron(progressbar, A_STANDOUT);
@@ -44,7 +42,7 @@ void ProgressBarDisplay::draw() {
         mvwprintw(progressbar, 5, 6, "Bytes percentage %d %%", BarGUI::getBUpl());
         mvwprintw(progressbar, 6, 6, "File percentage  %d %%", BarGUI::getFUpl());
 
-        // displaying the files here:
+        // display dei file..
 
         mvwprintw(progressbar, 5, 80, "Current File: %s", BarGUI::getCurrentName().c_str());
         wrefresh(progressbar);
@@ -63,3 +61,5 @@ void ProgressBarDisplay::draw() {
 
 
 }
+
+
