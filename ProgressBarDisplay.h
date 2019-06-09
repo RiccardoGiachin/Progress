@@ -5,23 +5,30 @@
 #ifndef PROGRESSBAR_GUIPROGRESSBAR_H
 #define PROGRESSBAR_GUIPROGRESSBAR_H
 
+
 #include <list>
+#include <ncurses.h>
 #include "BarGUI.h"
+#include "Display.h"
 #include "FileManager.h"
 #include "ResourceFile.h"
 
-class GUIProgressBar : public BarGUI, public Display {
+class ProgressBarDisplay : public BarGUI, public Display {
 public:
-    virtual ~GUIProgressBar();
+    virtual ~ProgressBarDisplay();
 
-    GUIProgressBar(FileManager *s);
+    ProgressBarDisplay(FileManager *s);
 
-    virtual void draw() override;
-
+    virtual void disegna() override;
 
 private:
+
     WINDOW *progressbar;
+    WINDOW *progressbarOut;
+    WINDOW *progressbarRisorse;
+
 };
+
 
 
 #endif //PROGRESSBAR_GUIPROGRESSBAR_H

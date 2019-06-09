@@ -5,47 +5,48 @@
 #ifndef PRIMO_GUIBAR_H
 #define PRIMO_GUIBAR_H
 
-#include <string.h>
-#include <ncurses.h>
-#include "Observer.h"
-#include "Display.h"
-#include "FileManager.h"
-#include "Exception.h"
 
+#include <string.h>
+#include "Display.h"
+#include "Observer.h"
+#include <iostream>
+#include "FileManager.h"
 
 class BarGUI : public Observer {
 public:
-
     BarGUI(FileManager *f);
 
     virtual ~BarGUI();
 
-    virtual void draw();
-
-    virtual void update(int bUp, int fUp, std::string fileName)
-    throw(NegativeOrNullBytesException, NegativeOrNullFilesException) override;
+    virtual void disegna();
 
     virtual void attach() override;
 
     virtual void detach() override;
 
-    int getBUpl() const;
+    virtual void update(int bitUpdate, int filesUpdate, std::string fileName, int actualBit) override
+    ;
 
-    void setBUpl(int bUpl);
+    int getBUp() const;
 
-    int getFUpl() const;
+    void setBUp(int bUpdate);
 
-    void setFUpl(int fUpl);
+    int getFUp() const;
+
+    int getBA() const;
+
+    void setFUp(int fUpdate);
 
     void setCurrentName(const std::string &currentName);
 
     const std::string &getCurrentName() const;
 
+
 private:
-    int bUpl, fUpl;
+    int bUpdate, fUpdate, actualBit;
     std::string currentName;
     FileManager *subject;
 };
 
 
-#endif //PRIMO_GUIBAR_H
+#endif

@@ -2,39 +2,16 @@
 // Created by giack on 22/10/18.
 //
 
-#include <iostream>
 #include "BarGUI.h"
-#include "Exception.h"
+#include <iostream>
 
-
-BarGUI::BarGUI(FileManager *f) : subject(f), bUpl(0), fUpl(0), currentName("NoFile") {
-}
+BarGUI::BarGUI(FileManager *f) : subject(f), bUpdate(0), fUpdate(0), currentName("Unknown") {}
 
 BarGUI::~BarGUI() {
     detach();
 }
 
-
-void BarGUI::draw() {
-    //uso la classe derivata per il display...
-
-}
-
-void BarGUI::update(int bUp, int fUp,
-                    std::string fileName) throw(NegativeOrNullBytesException, NegativeOrNullFilesException) {
-    if (bUp <= 0) {
-        throw NegativeOrNullBytesException(
-                "Errore impossibile aggiornare bytesUploaded : quantità di bytes nulla o negativa");
-    }
-    if (fUp <= 0) {
-        throw NegativeOrNullFilesException(
-                "Errore impossibile aggiornare fileUploaded : quantità files nulla o negativa");
-    }
-    bUpl = bUp;
-    fUpl = fUp;
-    currentName = fileName;
-    draw();
-}
+void BarGUI::disegna() {}
 
 void BarGUI::attach() {
     subject->subscribe(this);
@@ -44,20 +21,31 @@ void BarGUI::detach() {
     subject->unsubscribe(this);
 }
 
-int BarGUI::getBUpl() const {
-    return bUpl;
+void BarGUI::update(int bitUpdate, int filesUpdate, std::string fileName, int actualbit) {
+    bUpdate = bitUpdate;
+    fUpdate = filesUpdate;
+    currentName = fileName;
+    actualBit = actualbit;
+    disegna();
+}
+int BarGUI::getBA() const {
+    return actualBit;
 }
 
-void BarGUI::setBUpl(int bUpl) {
-    BarGUI::bUpl = bUpl;
+int BarGUI::getBUp() const {
+    return bUpdate;
 }
 
-int BarGUI::getFUpl() const {
-    return fUpl;
+void BarGUI::setBUp(int bUpdate) {
+    BarGUI::bUpdate = bUpdate;
 }
 
-void BarGUI::setFUpl(int fUpl) {
-    BarGUI::fUpl = fUpl;
+int BarGUI::getFUp() const {
+    return fUpdate;
+}
+
+void BarGUI::setFUp(int fUpdate) {
+    BarGUI::fUpdate = fUpdate;
 }
 
 void BarGUI::setCurrentName(const std::string &currentName) {
@@ -67,9 +55,5 @@ void BarGUI::setCurrentName(const std::string &currentName) {
 const std::string &BarGUI::getCurrentName() const {
     return currentName;
 }
-
-
-
-
 
 

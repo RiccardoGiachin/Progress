@@ -8,10 +8,8 @@
 
 #include "Subject.h"
 #include "ResourceFile.h"
-#include "Exception.h"
 #include <list>
 #include <string>
-
 
 class FileManager : public Subject {
 public:
@@ -19,30 +17,31 @@ public:
 
     virtual ~FileManager();
 
-    void loadFiles();
+    void caricaFiles();
 
     virtual void subscribe(Observer *o) override;
 
     virtual void unsubscribe(Observer *o) override;
 
-    virtual void notify(int bytesPercentage, int filesPercentage, std::string fileName) override;
+    virtual void notify(int bitPercentuale, int filesPercentuale, std::string fileName, int bitAttuale) override;
 
-    int getFileLoaded() const;
-
-    void storeFiles(ResourceFile *f) throw(NegativeOrNullBytesException);
+    int getFileCaricati() const;
 
     const std::list<Observer *> &getObservers() const;
 
-    int getBytesLoaded() const;
-
     const std::list<ResourceFile *> &getFiles() const;
+
+    int getBitCaricati() const;
+
+    void storeRisorse(ResourceFile *f);
 
 private:
 
     std::list<Observer *> observers;
-    int fileLoaded;
-    int bytesLoaded;
     std::list<ResourceFile *> files;
+    int fileCaricati;
+    int bitCaricati;
+
 };
 
 

@@ -6,10 +6,11 @@
 #define PRIMO_DISPLAY_H
 
 class Display {
-public:
-    virtual ~Display() {}
+        public:
+        virtual ~Display() {}
 
-    virtual void draw()=0;
+        virtual void disegna()=0;
 };
+
 
 #endif //PRIMO_DISPLAY_H
