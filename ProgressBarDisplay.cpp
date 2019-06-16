@@ -51,24 +51,16 @@ void ProgressBarDisplay::disegna() {
 
 
             }
-
-            //wtimeout(progressbarRisorse, 100);
             wgetch(progressbarRisorse);
-            int tot = 0;
-            tot = 100 / BarGUI::getBA();
-            while(tot < 100){
-                for(int j = 0; j < tot + 1; j++){
 
-
-                    mvwprintw(progressbarRisorse, 3, j + 8, "", 97);
-                    waddch(progressbarRisorse, 97|ACS_BULLET);
-
-
-                }
-                wrefresh(progressbar);
-                wgetch(progressbarRisorse);
-                tot += tot;
+            for(int k = 0; k < BarGUI::getBA(); k++){
+                mvwprintw(progressbarRisorse, 3, k + 6, "", 97);
+                waddch(progressbarRisorse, 97|ACS_BULLET);
             }
+            wrefresh(progressbar);
+            wgetch(progressbarRisorse);
+
+
 
             mvwprintw(progressbar, 3, i + 6, "", 97);
             waddch(progressbar, 97 | ACS_BULLET);

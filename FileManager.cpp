@@ -15,21 +15,38 @@ FileManager::~FileManager() {
 }
 
 void FileManager::caricaFiles() {
-    int count = 0;
     int totBit = 0;
-    int bitAttuale = 0;
     for (auto itr = std::begin(files); itr != std::end(files); itr++) {
-        count++;
         totBit += (*itr)->getBit();
     }
     for (auto itr = std::begin(files); itr != std::end(files); itr++) {
-        bitCaricati += (*itr)->getBit();
+
         bitAttuale = (*itr)->getBit();
+        fileName = (*itr)->getFileName();
+
+        if(bitPercentuale == 0){
+            bitPercentuale = 1;
+        }
+
+
+        bitAttuale = 100 / bitAttuale;
+        while (bitAttuale < 101){
+            notify();
+            bitAttuale += bitAttuale;
+
+        }
+        bitCaricati += (*itr)->getBit();
         fileCaricati++;
-        std::string name = (*itr)->getFileName();
-        int bitPercentuale = (bitCaricati * 100) / totBit;
-        int filesPercentuale = (fileCaricati * 100) / count;
-        notify(bitPercentuale, filesPercentuale, name, bitAttuale);
+        bitPercentuale = (bitCaricati * 100) / totBit;
+        filesPercentuale = (fileCaricati * 100) / (int)files.size();
+        if(bitPercentuale == 100){
+            bitAttuale = 100;
+            notify();
+        }
+
+
+
+
     }
 }
 
@@ -41,7 +58,7 @@ void FileManager::unsubscribe(Observer *o) {
     observers.remove(o);
 }
 
-void FileManager::notify(int bitPercentuale, int filesPercentuale, std::string fileName, int bitAttuale) {
+void FileManager::notify( ) {
     for (auto itr = std::begin(observers); itr != std::end(observers); itr++) {
         (*itr)->update(bitPercentuale, filesPercentuale, fileName, bitAttuale);
     }

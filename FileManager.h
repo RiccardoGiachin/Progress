@@ -23,7 +23,7 @@ public:
 
     virtual void unsubscribe(Observer *o) override;
 
-    virtual void notify(int bitPercentuale, int filesPercentuale, std::string fileName, int bitAttuale) override;
+    virtual void notify() override;
 
     int getFileCaricati() const;
 
@@ -39,8 +39,10 @@ private:
 
     std::list<Observer *> observers;
     std::list<ResourceFile *> files;
+    std::string fileName;
     int fileCaricati;
     int bitCaricati;
+    int filesPercentuale, bitPercentuale, bitAttuale;
 
 };
 

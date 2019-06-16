@@ -13,7 +13,7 @@ public:
 
     virtual void unsubscribe(Observer *o)=0;
 
-    virtual void notify(int bitPercentuale, int filesPercentuale, std::string fileName, int bitAttuale)=0;
+    virtual void notify()=0;
 
 };
 
